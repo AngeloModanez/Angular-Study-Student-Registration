@@ -1,1 +1,70 @@
-<p>authors works!</p>
+<main class="container card mt-4 p-4">
+    <div>
+        <h1 class="mb-5">Author Registration</h1>
+        <form>
+            <section class="row mb-3">
+                <div>
+                  <label class="form-label">FullName:</label>
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="FullName"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                </div>
+                <div >
+                  <label for="txtFullName" class="form-label"> Pseudonym: </label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Pseudonym"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                </div>
+              </section>
+              <section class="row mb-3">
+                <div class="col">
+                  <label class="form-label">Born:</label>
+                  <div class="input-group mb-2 sm-10">
+                    <input type="date" name="born" class="form-control" id="born" />
+                  </div>
+                </div>
+                <div class="col">
+                  <label for="txtFullName" class="sm-2 form-label">
+                    Nationality:
+                  </label>
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nationality"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                </div>
+              </section>
+              <section class="row mb-3">
+                <div class="form-check d-grid justify-content-center">
+                  <div class="col">
+                    <h4 for="txtFullName" class="form-label">
+                      Does the author have a prize?
+                    </h4>
+                  </div>
+                  <div class="form-check d-flex justify-content-center gap-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Yes, the author has.
+                    </label>
+                  </div>
+                </div>
+              </section>
+        </form>
+    </div>
+</main>
