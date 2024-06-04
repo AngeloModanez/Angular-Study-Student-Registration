@@ -2,14 +2,14 @@
   <form [formGroup]="authorFormGroup" class="col-9 mx-auto">
     <h1 class="mb-5 text-center">Author Registration</h1>
     <section class="row mb-3">
-      <label class="form-label">FullName:</label>
+      <label for="name" class="form-label">FullName:</label>
       <div class="input-group col">
         <input class="form-control" type="text" formControlName="name" id="name" placeholder="Enter the name">
         <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
       </div>
     </section>
     <section class="row mb-3">
-      <label class="form-label">Pseudonym:</label>
+      <label for="pseudonym" class="form-label">Pseudonym:</label>
       <div class="input-group col">
         <input class="form-control" type="text" formControlName="pseudonym" id="pseudonym"
           placeholder="Enter the pseudonym">
@@ -18,13 +18,13 @@
     </section>
     <section class="row mb-3">
       <div class="col">
-        <label class="form-label">Born:</label>
+        <label for="born" class="form-label">Born:</label>
         <div class="input-group col">
           <input class="form-control" type="date" formControlName="born" id="born" />
         </div>
       </div>
       <div class="col">
-        <label class="form-label">Nationality:</label>
+        <label for="nationality" class="form-label">Nationality:</label>
         <div class="input-group col">
           <input class="form-control" type="text" formControlName="nationality" id="nationality"
             placeholder="Nationality" />

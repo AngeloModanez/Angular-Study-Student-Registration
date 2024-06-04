@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Author } from '../../interfaces/author';
+import { AuthorService } from '../../services/author.service';
 import { Book } from '../../interfaces/book';
 import { BookService } from '../../services/book.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { AuthorService } from '../../services/author.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-books',
@@ -25,11 +26,11 @@ export class BooksComponent implements OnInit {
   ) {
     this.bookFormGroup = formBuilder.group({
       id: [''],
-      title: [''],
-      author: [''],
-      synopsis: [''],
-      date: [''],
-      genre: ['']
+      title: ['', [Validators.required]],
+      authorId: ['', [Validators.required]],
+      synopsis: ['', [Validators.minLength(15), Validators.required]],
+      date: ['', [Validators.required]],
+      genre: ['', [Validators.minLength(3), Validators.required]]
     })
   }
 

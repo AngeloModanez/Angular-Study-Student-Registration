@@ -2,15 +2,16 @@
     <form [formGroup]="bookFormGroup" class="col-9 mx-auto">
         <h1 class="mb-5 text-center">Book Registration</h1>
         <section class="row mb-3">
-            <label class="form-label">Book's title:</label>
+            <label for="title" class="form-label">Book's title:</label>
             <div class="input-group col">
                 <input class="form-control" type="text" formControlName="title" id="title"
                     placeholder="Enter the title">
                 <span class="input-group-text"><i class="bi bi-book"></i></span>
             </div>
+            
         </section>
         <section class="row mb-3">
-            <label class="form-label">Book's Author:</label>
+            <label for="author" class="form-label">Book's Author:</label>
             <div class="input-group col">
                 <select class="form-select" formControlName="authorId" [compareWith]="compareAuthors">
                     <option *ngFor="let author of arrayAuthor" [ngValue]="author.id">
@@ -22,7 +23,7 @@
         </section>
         <section class="row mb-3">
             <div class="col">
-                <label class="form label">Synopsis:</label>
+                <label for="synopsis" class="form label">Synopsis:</label>
                 <div class="input-group col">
                     <textarea class="form-control" formControlName="synopsis" id="synopsis" rows="3"
                         placeholder="Synopsis"></textarea>
@@ -32,13 +33,13 @@
         </section>
         <section class="row mb-3">
             <div class="col">
-                <label class="form-label">Date of Released:</label>
+                <label for="date" class="form-label">Date of Released:</label>
                 <div class="input-group col">
                     <input class="form-control" type="month" formControlName="date" id="date" min="100" max="2099" />
                 </div>
             </div>
             <div class="col">
-                <label class="form-label">Book's Genre:</label>
+                <label for="genre" class="form-label">Book's Genre:</label>
                 <div class="input-group col">
                     <input class="form-control" type="text" formControlName="genre" id="genre"
                         placeholder="Enter the genre">

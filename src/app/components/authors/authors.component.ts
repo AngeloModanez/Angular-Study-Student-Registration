@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Author } from '../../interfaces/author';
 import { AuthorService } from '../../services/author.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -22,10 +22,10 @@ export class AuthorsComponent implements OnInit {
   ) {
     this.authorFormGroup = formBuilder.group({
       id: [''],
-      name: [''],
+      name: ['', [Validators.minLength(10), Validators.required]],
       pseudonym: [''],
-      born: [''],
-      nationality: [''],
+      born: ['', [Validators.required]],
+      nationality: ['', [Validators.minLength(10), Validators.required]],
       prize: [false]
     })
   }
@@ -42,23 +42,26 @@ export class AuthorsComponent implements OnInit {
 
   save() {
     this.submitted = true;
-    if (this.isEditing) {
-      this.authorService.update(this.authorFormGroup.value).subscribe({
-        next: () => {
-          this.loadAuthor();
-          this.isEditing = false;
-          this.submitted = false;
-          this.authorFormGroup.reset();
-        },
-      });
-    } else {
-      this.authorService.save(this.authorFormGroup.value).subscribe({
-        next: data => {
-          this.arrayAuthor.push(data);
-          this.authorFormGroup.reset();
-          this.submitted = false;
-        },
-      });
+    
+    if (this.authorFormGroup.valid) {
+      if (this.isEditing) {
+        this.authorService.update(this.authorFormGroup.value).subscribe({
+          next: () => {
+            this.loadAuthor();
+            this.isEditing = false;
+            this.submitted = false;
+            this.authorFormGroup.reset();
+          },
+        });
+      } else {
+        this.authorService.save(this.authorFormGroup.value).subscribe({
+          next: data => {
+            this.arrayAuthor.push(data);
+            this.authorFormGroup.reset();
+            this.submitted = false;
+          },
+        });
+      }
     }
   }
 
