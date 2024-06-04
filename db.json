@@ -1,4 +1,13 @@
 {
   "books": [],
-  "authors": []
+  "authors": [
+    {
+      "id": 1,
+      "name": "Angelo Ferraz Modanez ",
+      "pseudonym": "XXT",
+      "born": "4222-03-12",
+      "nationality": "Brazilian",
+      "prize": true
+    }
+  ]
 }

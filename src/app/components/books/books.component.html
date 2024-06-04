@@ -12,9 +12,10 @@
         <section class="row mb-3">
             <label class="form-label">Book's Author:</label>
             <div class="input-group col">
-                <select class="form-select" type="text" formControlName="author" id="author"
-                    placeholder="Enter the author">
-                    <option></option>
+                <select class="form-select" formControlName="authorId" [compareWith]="compareAuthors">
+                    <option *ngFor="let author of arrayAuthor" [ngValue]="author.id">
+                        {{ author.name }}
+                    </option>
                 </select>
                 <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
             </div>
@@ -65,15 +66,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let catch of arrayBook">
-                <th scope="row">{{ catch.id }}</th>
-                <td>{{ catch.title }}</td>
-                <td>{{ catch.author }}</td>
-                <td>{{ catch.date }}</td>
-                <td>{{ catch.genre }}</td>
+            <tr *ngFor="let book of arrayBook">
+                <th scope="row">{{ book.id }}</th>
+                <td>{{ book.title }}</td>
+                <td>{{ getAuthorName(book.authorId)?.name }}</td>
+                <td>{{ book.date }}</td>
+                <td>{{ book.genre }}</td>
                 <td>
-                    <button class="btn btn-success me-2" (click)="update(catch)">Update</button>
-                    <button class="btn btn-danger" (click)="delete(catch)">Delete</button>
+                    <button class="btn btn-success me-2" (click)="update(book)">Update</button>
+                    <button class="btn btn-danger" (click)="delete(book)">Delete</button>
                 </td>
             </tr>
         </tbody>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Author } from '../../interfaces/author';
 import { Book } from '../../interfaces/book';
 import { BookService } from '../../services/book.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthorService } from '../../services/author.service';
 
 @Component({
   selector: 'app-books',
@@ -10,6 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class BooksComponent implements OnInit {
   arrayBook: Book[] = [];
+  arrayAuthor: Author[] = [];
   bookFormGroup: FormGroup;
 
   isEditing: boolean = false;
@@ -17,6 +20,7 @@ export class BooksComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private authorService: AuthorService,
     private bookService: BookService
   ) {
     this.bookFormGroup = formBuilder.group({
@@ -31,11 +35,18 @@ export class BooksComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadBook();
+    this.loadAuthor();
   }
 
   loadBook() {
     this.bookService.getBook().subscribe({
       next: data => this.arrayBook = data,
+    });
+  }
+
+  loadAuthor() {
+    this.authorService.getAuthor().subscribe({
+      next: data => this.arrayAuthor = data,
     });
   }
 
@@ -70,5 +81,13 @@ export class BooksComponent implements OnInit {
   update(variable: Book) {
     this.isEditing = true;
     this.bookFormGroup.setValue(variable);
+  }
+
+  getAuthorName(authorId: number): Author | undefined {
+    return this.arrayAuthor.find(a => a.id === authorId);
+  }
+
+  compareAuthors(author1: Author, author2: Author): boolean {
+    return author1 && author2 ? author1.id === author2.id : author1 === author2;
   }
 }
