@@ -1,55 +1,81 @@
-<main class="container-sm card mt-4 p-5 rounded-4 border-3 ">
-    <div>
-        <h1 class="mb-5">Book Registration</h1>
-        <form>
-            <section class="row mb-3">
-                <label class="form-label">Book's title:</label>
+<main class="container-sm card mt-4 mb-3 p-5 rounded-4 border-3 ">
+    <form [formGroup]="bookFormGroup" class="col-9 mx-auto">
+        <h1 class="mb-5 text-center">Book Registration</h1>
+        <section class="row mb-3">
+            <label class="form-label">Book's title:</label>
+            <div class="input-group col">
+                <input class="form-control" type="text" formControlName="title" id="title"
+                    placeholder="Enter the title">
+                <span class="input-group-text"><i class="bi bi-book"></i></span>
+            </div>
+        </section>
+        <section class="row mb-3">
+            <label class="form-label">Book's Author:</label>
+            <div class="input-group col">
+                <select class="form-select" type="text" formControlName="author" id="author"
+                    placeholder="Enter the author">
+                    <option></option>
+                </select>
+                <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+            </div>
+        </section>
+        <section class="row mb-3">
+            <div class="col">
+                <label class="form label">Synopsis:</label>
                 <div class="input-group col">
-                    <input class="form-control" type="text" name="title" id="title" placeholder="Enter the title">
-                    <span class="input-group-text"><i class="bi bi-book"></i></span>
+                    <textarea class="form-control" formControlName="synopsis" id="synopsis" rows="3"
+                        placeholder="Synopsis"></textarea>
+                    <span class="input-group-text"><i class="bi bi-card-text"></i></span>
                 </div>
-            </section>
-            <section class="row mb-3">
-                <label class="form-label">Book's Author:</label>
+            </div>
+        </section>
+        <section class="row mb-3">
+            <div class="col">
+                <label class="form-label">Date of Released:</label>
                 <div class="input-group col">
-                    <select class="form-select" name="author" id="author" placeholder="Enter the author">
-                        <option></option>
-                    </select>
-                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                    <input class="form-control" type="month" formControlName="date" id="date" min="100" max="2099" />
                 </div>
-            </section>
-            <section class="row mb-3">
-                <div class="col">
-                    <label class="form label">Synopsis:</label>
-                    <div class="input-group col">
-                        <textarea class="form-control" name="synopsis" id="synopsis" rows="4"
-                            placeholder="Synopsis"></textarea>
-                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
-                    </div>
+            </div>
+            <div class="col">
+                <label class="form-label">Book's Genre:</label>
+                <div class="input-group col">
+                    <input class="form-control" type="text" formControlName="genre" id="genre"
+                        placeholder="Enter the genre">
+                    <span class="input-group-text"><i class="bi bi-heart"></i></span>
                 </div>
-            </section>
-            <section class="row mb-3">
-                <div class="col">
-                    <label class="form-label">Date of Released:</label>
-                    <div class="input-group col">
-                        <input class="form-control" type="month" name="date" id="date" min="100" max="2099"
-                            step="100" />
-                    </div>
-                </div>
-                <div class="col">
-                    <label class="form-label">Book's Genre:</label>
-                    <div class="input-group col">
-                        <input class="form-control" type="text" name="genre" id="genre" placeholder="Enter the genre">
-                        <span class="input-group-text"><i class="bi bi-heart"></i></span>
-                    </div>
-                </div>
-            </section>
-            <section class="row mb-3">
-                <div class="btn-save text-center">
-                    <button type="button" class="btn btn-secondary w-100 mt-3">Save <i
-                            class="bi bi-box-arrow-in-right"></i></button>
-                </div>
-            </section>
-        </form>
-    </div>
+            </div>
+        </section>
+        <section class="row mb-4">
+            <div class="btn-save text-center">
+                <button class="btn btn-secondary w-100 mt-3 mb-4" type="submit" (click)="save()">Save <i
+                        class="bi bi-box-arrow-in-right"></i></button>
+            </div>
+        </section>
+    </form>
+    <h1 class="text-center">Books</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Date</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let catch of arrayBook">
+                <th scope="row">{{ catch.id }}</th>
+                <td>{{ catch.title }}</td>
+                <td>{{ catch.author }}</td>
+                <td>{{ catch.date }}</td>
+                <td>{{ catch.genre }}</td>
+                <td>
+                    <button class="btn btn-success me-2">Update</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </main>

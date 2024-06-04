@@ -1,52 +1,81 @@
-<main class="container-sm card mt-4 p-5 rounded-4 border-3 ">
-  <div>
-    <h1 class="mb-5">Author Registration</h1>
-    <form>
-      <section class="row mb-3">
-        <label class="form-label">FullName:</label>
+<main class="container-sm card mt-4 mb-3 p-5 rounded-4 border-3 ">
+  <form [formGroup]="authorFormGroup" class="col-9 mx-auto">
+    <h1 class="mb-5 text-center">Author Registration</h1>
+    <section class="row mb-3">
+      <label class="form-label">FullName:</label>
+      <div class="input-group col">
+        <input class="form-control" type="text" formControlName="name" id="name" placeholder="Enter the name">
+        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+      </div>
+    </section>
+    <section class="row mb-3">
+      <label class="form-label">Pseudonym:</label>
+      <div class="input-group col">
+        <input class="form-control" type="text" formControlName="pseudonym" id="pseudonym"
+          placeholder="Enter the pseudonym">
+        <span class="input-group-text"><i class="bi bi-incognito"></i></span>
+      </div>
+    </section>
+    <section class="row mb-3">
+      <div class="col">
+        <label class="form-label">Born:</label>
         <div class="input-group col">
-          <input class="form-control" type="text" name="name" id="name" placeholder="Enter the name">
-          <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+          <input class="form-control" type="date" formControlName="born" id="born" />
         </div>
-      </section>
-      <section class="row mb-3">
-        <label class="form-label">Pseudonym:</label>
+      </div>
+      <div class="col">
+        <label class="form-label">Nationality:</label>
         <div class="input-group col">
-          <input class="form-control" type="text" name="pseudonym" id="pseudonym" placeholder="Enter the pseudonym">
-          <span class="input-group-text"><i class="bi bi-incognito"></i></span>
+          <input class="form-control" type="text" formControlName="nationality" id="nationality"
+            placeholder="Nationality" />
+          <span class="input-group-text"><i class="bi bi-globe-americas"></i></span>
         </div>
-      </section>
-      <section class="row mb-3">
+      </div>
+    </section>
+    <section class="row mb-3">
+      <div class="form-check">
         <div class="col">
-          <label class="form-label">Born:</label>
-          <div class="input-group col">
-            <input class="form-control" type="date" name="born" id="born" />
-          </div>
+          <h5 class="form-label">Does the author have a prize?</h5>
         </div>
-        <div class="col">
-          <label class="form-label">Nationality:</label>
-          <div class="input-group col">
-            <input class="form-control" type="text" name="nationality" id="nationality" placeholder="Nationality" />
-            <span class="input-group-text"><i class="bi bi-globe-americas"></i></span>
-          </div>
-        </div>
-      </section>
-      <section class="row mb-3">
         <div class="form-check">
-          <div class="col">
-            <h5 class="form-label">Does the author have a prize?</h5>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label">Yes, the author has.</label>
-          </div>
+          <input class="form-check-input" type="checkbox" value="" formControlName="prize" id="prize">
+          <label class="form-check-label">Yes, the author has.</label>
         </div>
-      </section>
-      <section class="row mb-3">
-        <div class="btn-save text-center">
-          <button type="button" class="btn btn-secondary w-100 mt-3">Save <i class="bi bi-box-arrow-in-right"></i></button>
-        </div>
-      </section>
-    </form>
-  </div>
+      </div>
+    </section>
+    <section class="row mb-3">
+      <div class="btn-save text-center">
+        <button class="btn btn-secondary w-100 mt-3 mb-4" type="submit" (click)="save()">Save <i
+            class="bi bi-box-arrow-in-right"></i></button>
+      </div>
+    </section>
+  </form>
+  <h1 class="text-center">Authors</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Author</th>
+        <th scope="col">Pseudonym</th>
+        <th scope="col">Born</th>
+        <th scope="col">Nationality</th>
+        <th scope="col">Prize</th>
+        <th scope="col-6">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let catch of arrayAuthor">
+        <th scope="row">{{ catch.id }}</th>
+        <td>{{ catch.name }}</td>
+        <td>{{ catch.pseudonym }}</td>
+        <td>{{ catch.born }}</td>
+        <td>{{ catch.nationality }}</td>
+        <td>{{ catch.prize }}</td>
+        <td>
+          <button class="btn btn-success me-2">Update</button>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </main>

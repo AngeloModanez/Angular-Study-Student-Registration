@@ -1,7 +1,8 @@
 export interface Author{
     id: number;
-    fullname: string;
+    name: string;
     pseudonym: string;
     born: Date;
     nationality: string;
+    prize: boolean;
 }
