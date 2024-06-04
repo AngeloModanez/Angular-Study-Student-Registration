@@ -72,8 +72,8 @@
         <td>{{ catch.nationality }}</td>
         <td>{{ catch.prize }}</td>
         <td>
-          <button class="btn btn-success me-2">Update</button>
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-success me-2" (click)="update(catch)">Update</button>
+          <button class="btn btn-danger" (click)="delete(catch)">Delete</button>
         </td>
       </tr>
     </tbody>
