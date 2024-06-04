@@ -7,6 +7,7 @@
         <input class="form-control" type="text" formControlName="name" id="name" placeholder="Enter the name">
         <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
       </div>
+      <small *ngIf="submitted && name.hasError('required')" class="text-danger">~The name is required</small>
     </section>
     <section class="row mb-3">
       <label for="pseudonym" class="form-label">Pseudonym:</label>
@@ -22,6 +23,7 @@
         <div class="input-group col">
           <input class="form-control" type="date" formControlName="born" id="born" />
         </div>
+        <small *ngIf="submitted && born.hasError('required')" class="text-danger">~The born is required</small>
       </div>
       <div class="col">
         <label for="nationality" class="form-label">Nationality:</label>
@@ -30,6 +32,7 @@
             placeholder="Nationality" />
           <span class="input-group-text"><i class="bi bi-globe-americas"></i></span>
         </div>
+        <small *ngIf="submitted && nationality.hasError('required')" class="text-danger">~The nationality is required</small>
       </div>
     </section>
     <section class="row mb-3">

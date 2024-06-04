@@ -1,12 +1,53 @@
 {
-  "books": [],
+  "books": [
+    {
+      "id": 1,
+      "title": "Scalet and the Lesson",
+      "authorId": 1,
+      "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus nibh, fermentum non ornare quis, rhoncus in urna. Nunc pellentesque nunc a luctus dictum. Nam laoreet, orci scelerisque fringilla condimentum, odio metus volutpat lacus, vitae facilisis justo lectus quis leo. Cras lacus tellus, eleifend quis mauris vitae, lacinia commodo ante.",
+      "date": "2008-05",
+      "genre": "Romance, Love, Horror"
+    },
+    {
+      "id": 2,
+      "title": "Gnome and the Magic Florest",
+      "authorId": 3,
+      "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus nibh, fermentum non ornare quis, rhoncus in urna. Nunc pellentesque nunc a luctus dictum. Nam laoreet, orci scelerisque fringilla condimentum, odio metus volutpat lacus, vitae facilisis justo lectus quis leo. Cras lacus tellus, eleifend quis mauris vitae, lacinia commodo ante.",
+      "date": "2011-11",
+      "genre": "Truth-Factors, Magic "
+    },
+    {
+      "id": 3,
+      "title": "I love Blue",
+      "authorId": 2,
+      "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus nibh, fermentum non ornare quis, rhoncus in urna. Nunc pellentesque nunc a luctus dictum. Nam laoreet, orci scelerisque fringilla condimentum, odio metus volutpat lacus, vitae facilisis justo lectus quis leo. Cras lacus tellus, eleifend quis mauris vitae, lacinia commodo ante.",
+      "date": "1223-02",
+      "genre": "Blue"
+    }
+  ],
   "authors": [
     {
       "id": 1,
       "name": "Angelo Ferraz Modanez ",
-      "pseudonym": "XXT",
+      "pseudonym": "Banana",
       "born": "4222-03-12",
       "nationality": "Brazilian",
+      "prize": true
+    },
+    {
+      "id": 2,
+      "name": "Yuyya",
+      "pseudonym": "AUT",
+      "born": "275760-06-06",
+      "nationality": "Japan",
+      "prize": null
+    },
+    {
+      "id": 3,
+      "name": "Giuseppe",
+      "pseudonym": "Duendss",
+      "born": "2011-11-11",
+      "nationality": "Gnome Land",
       "prize": true
     }
   ]

@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="container bg-light p-3 mb-4">
+    <div class="row justify-content-center">
+        <form [formGroup]="homeFormGroup" class="d-flex flex-wrap justify-content-center w-100">
+            <span *ngFor="let book of arrayBook" class="card-container text-center">
+                <div class="card m-3">
+                    <div class="card-body">
+                        <h5 class="card-title fs-5 mt-2" style="font-weight: 900;">{{book.title}}</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{book.synopsis}}</li>
+                            <li class="list-group-item">{{ getAuthor(book.authorId)?.name }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </span>
+        </form>
+    </div>
+</div>

@@ -8,7 +8,8 @@
                     placeholder="Enter the title">
                 <span class="input-group-text"><i class="bi bi-book"></i></span>
             </div>
-            
+            <small *ngIf="submitted && title.hasError('required')" class="text-danger">~The title is
+                required</small>
         </section>
         <section class="row mb-3">
             <label for="author" class="form-label">Book's Author:</label>
@@ -20,6 +21,8 @@
                 </select>
                 <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
             </div>
+            <small *ngIf="submitted && authorId.hasError('required')" class="text-danger">~The Author is required
+            </small>
         </section>
         <section class="row mb-3">
             <div class="col">
@@ -30,6 +33,8 @@
                     <span class="input-group-text"><i class="bi bi-card-text"></i></span>
                 </div>
             </div>
+            <small *ngIf="submitted && synopsis.hasError('required')" class="text-danger">~The synopsis is
+                required</small>
         </section>
         <section class="row mb-3">
             <div class="col">
@@ -37,6 +42,8 @@
                 <div class="input-group col">
                     <input class="form-control" type="month" formControlName="date" id="date" min="100" max="2099" />
                 </div>
+                <small *ngIf="submitted && date.hasError('required')" class="text-danger">~The date is
+                    required</small>
             </div>
             <div class="col">
                 <label for="genre" class="form-label">Book's Genre:</label>
@@ -45,6 +52,8 @@
                         placeholder="Enter the genre">
                     <span class="input-group-text"><i class="bi bi-heart"></i></span>
                 </div>
+                <small *ngIf="submitted && genre.hasError('required')" class="text-danger">~The genre is
+                    required</small>
             </div>
         </section>
         <section class="row mb-4">

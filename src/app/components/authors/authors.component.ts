@@ -22,10 +22,10 @@ export class AuthorsComponent implements OnInit {
   ) {
     this.authorFormGroup = formBuilder.group({
       id: [''],
-      name: ['', [Validators.minLength(10), Validators.required]],
+      name: ['', [Validators.required]],
       pseudonym: [''],
       born: ['', [Validators.required]],
-      nationality: ['', [Validators.minLength(10), Validators.required]],
+      nationality: ['', [Validators.required]],
       prize: [false]
     })
   }
@@ -42,7 +42,7 @@ export class AuthorsComponent implements OnInit {
 
   save() {
     this.submitted = true;
-    
+
     if (this.authorFormGroup.valid) {
       if (this.isEditing) {
         this.authorService.update(this.authorFormGroup.value).subscribe({
@@ -74,5 +74,17 @@ export class AuthorsComponent implements OnInit {
   update(variable: Author) {
     this.isEditing = true;
     this.authorFormGroup.setValue(variable);
+  }
+
+  get name(): any {
+    return this.authorFormGroup.get('name')
+  }
+
+  get born(): any {
+    return this.authorFormGroup.get('born')
+  }
+
+  get nationality(): any {
+    return this.authorFormGroup.get('nationality')
   }
 }

@@ -28,9 +28,9 @@ export class BooksComponent implements OnInit {
       id: [''],
       title: ['', [Validators.required]],
       authorId: ['', [Validators.required]],
-      synopsis: ['', [Validators.minLength(15), Validators.required]],
+      synopsis: ['', [Validators.required]],
       date: ['', [Validators.required]],
-      genre: ['', [Validators.minLength(3), Validators.required]]
+      genre: ['', [Validators.required]]
     })
   }
 
@@ -53,23 +53,26 @@ export class BooksComponent implements OnInit {
 
   save() {
     this.submitted = true;
-    if (this.isEditing) {
-      this.bookService.update(this.bookFormGroup.value).subscribe({
-        next: () => {
-          this.loadBook();
-          this.isEditing = false;
-          this.submitted = false;
-          this.bookFormGroup.reset();
-        },
-      });
-    } else {
-      this.bookService.save(this.bookFormGroup.value).subscribe({
-        next: data => {
-          this.arrayBook.push(data);
-          this.bookFormGroup.reset();
-          this.submitted = false;
-        },
-      });
+
+    if (this.bookFormGroup.valid) {
+      if (this.isEditing) {
+        this.bookService.update(this.bookFormGroup.value).subscribe({
+          next: () => {
+            this.loadBook();
+            this.isEditing = false;
+            this.submitted = false;
+            this.bookFormGroup.reset();
+          },
+        });
+      } else {
+        this.bookService.save(this.bookFormGroup.value).subscribe({
+          next: data => {
+            this.arrayBook.push(data);
+            this.bookFormGroup.reset();
+            this.submitted = false;
+          },
+        });
+      }
     }
   }
 
@@ -91,4 +94,25 @@ export class BooksComponent implements OnInit {
   compareAuthors(author1: Author, author2: Author): boolean {
     return author1 && author2 ? author1.id === author2.id : author1 === author2;
   }
+
+  get title(): any {
+    return this.bookFormGroup.get('title')
+  }
+
+  get authorId(): any {
+    return this.bookFormGroup.get('authorId')
+  }
+
+  get synopsis(): any {
+    return this.bookFormGroup.get('synopsis')
+  }
+
+  get date(): any {
+    return this.bookFormGroup.get('date')
+  }
+
+  get genre(): any {
+    return this.bookFormGroup.get('genre')
+  }
 }
+
