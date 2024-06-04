@@ -6,7 +6,7 @@
                 <label class="form-label">Book's title:</label>
                 <div class="input-group col">
                     <input class="form-control" type="text" name="title" id="title" placeholder="Enter the title">
-                    <span class="input-group-text"></span>
+                    <span class="input-group-text"><i class="bi bi-book"></i></span>
                 </div>
             </section>
             <section class="row mb-3">
@@ -15,15 +15,16 @@
                     <select class="form-select" name="author" id="author" placeholder="Enter the author">
                         <option></option>
                     </select>
-                    <span class="input-group-text"></span>
+                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
                 </div>
             </section>
             <section class="row mb-3">
                 <div class="col">
                     <label class="form label">Synopsis:</label>
-                    <div class="input-group">
+                    <div class="input-group col">
                         <textarea class="form-control" name="synopsis" id="synopsis" rows="4"
                             placeholder="Synopsis"></textarea>
+                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
                     </div>
                 </div>
             </section>
@@ -33,20 +34,20 @@
                     <div class="input-group col">
                         <input class="form-control" type="month" name="date" id="date" min="100" max="2099"
                             step="100" />
-                        <span class="input-group-text"></span>
                     </div>
                 </div>
                 <div class="col">
                     <label class="form-label">Book's Genre:</label>
                     <div class="input-group col">
                         <input class="form-control" type="text" name="genre" id="genre" placeholder="Enter the genre">
-                        <span class="input-group-text"></span>
+                        <span class="input-group-text"><i class="bi bi-heart"></i></span>
                     </div>
                 </div>
             </section>
             <section class="row mb-3">
                 <div class="btn-save text-center">
-                    <button type="button" class="btn btn-secondary w-100 mt-3">Save</button>
+                    <button type="button" class="btn btn-secondary w-100 mt-3">Save <i
+                            class="bi bi-box-arrow-in-right"></i></button>
                 </div>
             </section>
         </form>
