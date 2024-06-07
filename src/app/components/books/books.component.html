@@ -1,4 +1,4 @@
-<main class="container w-75 bg-dark rounded-4 mt-3 p-5" style="margin-bottom: 90px;">
+<main class="container w-75 bg-dark rounded-4 mt-4 p-5" style="margin-bottom: 90px;">
   <form [formGroup]="bookFormGroup" class="mx-auto">
     <div class="card rounded-4 border-5 border-success p-5">
       <h1 class="mb-4 text-center">Book Registration</h1>
@@ -68,7 +68,7 @@
           <th scope="col">Options</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider" style="font-size: 14px;">
+      <tbody class="table-group-divider text-center" style="font-size: 14px;">
         <tr *ngFor="let book of arrayBook">
           <th scope="row">{{ book.id }}</th>
           <td>{{ book.title }}</td>
@@ -76,8 +76,8 @@
           <td>{{ book.date }}</td>
           <td>{{ book.genre }}</td>
           <td>
-            <button class="btn btn-success me-2" (click)="update(book)">Update</button>
-            <button class="btn btn-danger" (click)="delete(book)">Delete</button>
+            <button class="btn btn-success me-2" (click)="update(book)"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-danger" (click)="delete(book)"><i class="bi bi-trash"></i></button>
           </td>
         </tr>
       </tbody>

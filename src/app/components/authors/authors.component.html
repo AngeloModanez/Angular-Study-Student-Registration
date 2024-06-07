@@ -70,20 +70,21 @@
           <th scope="col-6">Options</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider" style="font-size: 14px;">
+      <tbody class="table-group-divider text-center" style="font-size: 14px;">
         <tr *ngFor="let author of arrayAuthor">
           <th scope="row">{{ author.id }}</th>
           <td>{{ author.name }}</td>
           <td>{{ author.pseudonym }}</td>
           <td>{{ author.born }}</td>
           <td>{{ author.nationality }}</td>
-          <td class="text-center">
-            <span *ngIf="author.award" class="badge text-bg-primary">Has an award</span>
-            <span *ngIf="!author.award" class="badge text-bg-secondary">Has not an award</span>
+          <td>
+            <span *ngIf="author.award" class="badge text-bg-warning w-100">Has Award</span>
+            <span *ngIf="!author.award" class="badge text-bg-secondary w-100">Has not Award</span>
           </td>
           <td>
-            <button class="btn btn-success me-2" (click)="update(author)">Update</button>
-            <button class="btn btn-danger" (click)="delete(author)">Delete</button>
+            <button class="btn btn-success me-2" (click)="update(author)"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-danger me-2" (click)="delete(author)"><i class="bi bi-trash"></i></button>
+            <button class="btn btn-primary" ><i class="bi bi-book"></i></button>
           </td>
         </tr>
       </tbody>

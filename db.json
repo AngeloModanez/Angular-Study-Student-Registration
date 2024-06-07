@@ -2,148 +2,68 @@
   "books": [
     {
       "id": 1,
-      "title": "O Mistério da Casa Verde",
+      "title": "I love Blue",
       "authorId": 1,
-      "synopsis": "Um suspense intrigante sobre uma casa cheia de segredos.",
-      "date": "2023-03",
-      "genre": "Mistério"
+      "synopsis": "\"I Love Blue\" narra a jornada de Yuyya, um jovem autista que encontra expressão e conforto através da cor azul. Vivendo em uma pequena cidade costeira, ele explora as nuances do azul, que representam suas emoções e pensamentos. Através da arte, Lucas comunica seu mundo interior de uma maneira que as palavras não conseguem. Com o apoio de sua mãe e de um professor de arte, ele começa a compartilhar suas pinturas, tocando o coração das pessoas ao seu redor. O livro celebra a diversidade e a singularidade de cada indivíduo, oferecendo uma visão empática do autismo e destacando o poder transformador da arte como forma de conexão humana.",
+      "date": "2000-07",
+      "genre": "Romance, Drama"
     },
     {
       "id": 2,
-      "title": "A Jornada Infinita",
+      "title": "Just Eighteen",
       "authorId": 2,
-      "synopsis": "Uma épica jornada através de terras desconhecidas.",
-      "date": "2024-01",
-      "genre": "Fantasia"
+      "synopsis": "Os primieros 18 anos cheio de aventuras e romance de um jovem adolescente que queria curtir a vida. Que sofre um acidente apos fumar muito pod",
+      "date": "2024-07",
+      "genre": "Romance, Adventure, Drama, Action, Comedy"
     },
     {
       "id": 3,
-      "title": "Amores e Desamores",
+      "title": "Among Us The Final Battle",
       "authorId": 3,
-      "synopsis": "Uma história de amor e perda em tempos modernos.",
-      "date": "2022-09",
-      "genre": "Romance"
+      "synopsis": "Em \"Among Us: The Final Battle\", Pedro Vinicius nos apresenta uma história de suspense e tensão, onde o impostor é o protagonista. Conhecido apenas como Among Us, ele se infiltra em um grupo de amigos que se reúne para uma expedição em uma estação espacial isolada. O que deveria ser uma aventura cheia de diversão rapidamente se transforma em um jogo mortal.\n\nAmong Us, movido por motivos obscuros, começa a eliminar os amigos um por um, sem levantar suspeitas imediatas. A cada assassinato, ele manipula a desconfiança e a paranoia dentro do grupo, levando-os a se voltarem uns contra os outros. Sua habilidade de se misturar e enganar é sua maior arma, e ele usa cada oportunidade para criar divisões e caos.\n\nÀ medida que o número de sobreviventes diminui, a tensão aumenta e as amizades são testadas ao extremo. Enquanto os amigos tentam desesperadamente descobrir a identidade do impostor, Among Us desfruta do seu jogo de gato e rato, sempre um passo à frente, escondendo-se à vista de todos.\n\nCom reviravoltas surpreendentes e um ritmo acelerado, \"Among Us: The Final Battle\" oferece uma visão fascinante da mente de um impostor e das dinâmicas de um grupo sob pressão mortal. Este thriller psicológico manterá os leitores presos até a última página, ansiosos para descobrir o desfecho desse jogo mortal.",
+      "date": "2050-04",
+      "genre": "Horror, Adventure, Drama"
     },
     {
       "id": 4,
-      "title": "A Ciência da Felicidade",
+      "title": "Respect ",
       "authorId": 4,
-      "synopsis": "Explorando a psicologia por trás da felicidade humana.",
-      "date": "2021-06",
-      "genre": "Psicologia"
-    },
-    {
-      "id": 5,
-      "title": "O Último Refúgio",
-      "authorId": 5,
-      "synopsis": "Uma história de sobrevivência em um mundo pós-apocalíptico.",
-      "date": "2025-02",
-      "genre": "Ficção Científica"
-    },
-    {
-      "id": 6,
-      "title": "Culinária para Todos",
-      "authorId": 6,
-      "synopsis": "Receitas fáceis e deliciosas para o dia a dia.",
-      "date": "2020-11",
-      "genre": "Culinária"
-    },
-    {
-      "id": 7,
-      "title": "Histórias da Antiga Grécia",
-      "authorId": 7,
-      "synopsis": "Mitos e lendas da Grécia Antiga.",
-      "date": "2019-08",
-      "genre": "História"
-    },
-    {
-      "id": 8,
-      "title": "O Código Secreto",
-      "authorId": 8,
-      "synopsis": "Um thriller tecnológico envolvendo hackers e segredos de estado.",
-      "date": "2023-10",
-      "genre": "Thriller"
-    },
-    {
-      "id": 9,
-      "title": "Gnome Land",
-      "authorId": 9,
-      "synopsis": "As aventuras, cheias de duendes, e emoções",
-      "date": "2022-03",
-      "genre": "Romance, Aventura, Drama"
+      "synopsis": "Respect",
+      "date": "2024-05",
+      "genre": "Action, Drama"
     }
   ],
   "authors": [
     {
       "id": 1,
-      "name": "Angelo Ferraz Modanez",
-      "pseudonym": "Banana",
-      "born": "4222-03-12",
-      "nationality": "Brazilian",
-      "prize": true
+      "name": "Yuyya",
+      "pseudonym": "Blue",
+      "born": "1945-08-14",
+      "nationality": "Japan",
+      "award": false
     },
     {
       "id": 2,
-      "name": "Maria Silva",
-      "pseudonym": "Luna",
-      "born": "1980-11-05",
-      "nationality": "Portuguese",
-      "prize": false
+      "name": "Lucas Camargo",
+      "pseudonym": "lukinha10",
+      "born": "2005-09-27",
+      "nationality": "Brazilian",
+      "award": true
     },
     {
       "id": 3,
-      "name": "João Pereira",
-      "pseudonym": null,
-      "born": "1975-04-18",
+      "name": "Pedro Vinicius",
+      "pseudonym": "Among Us",
+      "born": "6666-06-06",
       "nationality": "Brazilian",
-      "prize": true
+      "award": null
     },
     {
       "id": 4,
-      "name": "Ana Costa",
-      "pseudonym": "Flora",
-      "born": "1992-07-23",
-      "nationality": "Brazilian",
-      "prize": false
-    },
-    {
-      "id": 5,
-      "name": "Carlos Almeida",
-      "pseudonym": null,
-      "born": "1985-01-12",
-      "nationality": "Brazilian",
-      "prize": false
-    },
-    {
-      "id": 6,
-      "name": "Fernanda Ribeiro",
-      "pseudonym": "Nanda",
-      "born": "1978-09-10",
-      "nationality": "Brazilian",
-      "prize": true
-    },
-    {
-      "id": 7,
-      "name": "Pedro Oliveira",
-      "pseudonym": "P. Olive",
-      "born": "1965-02-25",
-      "nationality": "Brazilian",
-      "prize": false
-    },
-    {
-      "id": 8,
-      "name": "Clara Mendes",
-      "pseudonym": null,
-      "born": "1990-05-30",
-      "nationality": "Brazilian",
-      "prize": true
-    },
-    {
-      "id": 9,
-      "name": "Kefero Messisas Diogo Bolsonaro",
-      "pseudonym": "KeferoXXT",
-      "born": "2020-06-05",
-      "nationality": "Brazilian",
+      "name": "Julia Canavezzi",
+      "pseudonym": "Rainha",
+      "born": "20005-11-03",
+      "nationality": "World",
       "award": true
     }
   ]
