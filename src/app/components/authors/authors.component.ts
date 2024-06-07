@@ -26,7 +26,7 @@ export class AuthorsComponent implements OnInit {
       pseudonym: [''],
       born: ['', [Validators.required]],
       nationality: ['', [Validators.required]],
-      prize: [false]
+      award: [false]
     })
   }
 

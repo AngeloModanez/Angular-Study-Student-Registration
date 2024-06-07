@@ -2,33 +2,81 @@
   "books": [
     {
       "id": 1,
-      "title": "Scalet and the Lesson",
+      "title": "O Mistério da Casa Verde",
       "authorId": 1,
-      "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus nibh, fermentum non ornare quis, rhoncus in urna. Nunc pellentesque nunc a luctus dictum. Nam laoreet, orci scelerisque fringilla condimentum, odio metus volutpat lacus, vitae facilisis justo lectus quis leo. Cras lacus tellus, eleifend quis mauris vitae, lacinia commodo ante.",
-      "date": "2008-05",
-      "genre": "Romance, Love, Horror"
+      "synopsis": "Um suspense intrigante sobre uma casa cheia de segredos.",
+      "date": "2023-03",
+      "genre": "Mistério"
     },
     {
       "id": 2,
-      "title": "Gnome and the Magic Florest",
-      "authorId": 3,
-      "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus nibh, fermentum non ornare quis, rhoncus in urna. Nunc pellentesque nunc a luctus dictum. Nam laoreet, orci scelerisque fringilla condimentum, odio metus volutpat lacus, vitae facilisis justo lectus quis leo. Cras lacus tellus, eleifend quis mauris vitae, lacinia commodo ante.",
-      "date": "2011-11",
-      "genre": "Truth-Factors, Magic "
+      "title": "A Jornada Infinita",
+      "authorId": 2,
+      "synopsis": "Uma épica jornada através de terras desconhecidas.",
+      "date": "2024-01",
+      "genre": "Fantasia"
     },
     {
       "id": 3,
-      "title": "I love Blue",
-      "authorId": 2,
-      "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus nibh, fermentum non ornare quis, rhoncus in urna. Nunc pellentesque nunc a luctus dictum. Nam laoreet, orci scelerisque fringilla condimentum, odio metus volutpat lacus, vitae facilisis justo lectus quis leo. Cras lacus tellus, eleifend quis mauris vitae, lacinia commodo ante.",
-      "date": "1223-02",
-      "genre": "Blue"
+      "title": "Amores e Desamores",
+      "authorId": 3,
+      "synopsis": "Uma história de amor e perda em tempos modernos.",
+      "date": "2022-09",
+      "genre": "Romance"
+    },
+    {
+      "id": 4,
+      "title": "A Ciência da Felicidade",
+      "authorId": 4,
+      "synopsis": "Explorando a psicologia por trás da felicidade humana.",
+      "date": "2021-06",
+      "genre": "Psicologia"
+    },
+    {
+      "id": 5,
+      "title": "O Último Refúgio",
+      "authorId": 5,
+      "synopsis": "Uma história de sobrevivência em um mundo pós-apocalíptico.",
+      "date": "2025-02",
+      "genre": "Ficção Científica"
+    },
+    {
+      "id": 6,
+      "title": "Culinária para Todos",
+      "authorId": 6,
+      "synopsis": "Receitas fáceis e deliciosas para o dia a dia.",
+      "date": "2020-11",
+      "genre": "Culinária"
+    },
+    {
+      "id": 7,
+      "title": "Histórias da Antiga Grécia",
+      "authorId": 7,
+      "synopsis": "Mitos e lendas da Grécia Antiga.",
+      "date": "2019-08",
+      "genre": "História"
+    },
+    {
+      "id": 8,
+      "title": "O Código Secreto",
+      "authorId": 8,
+      "synopsis": "Um thriller tecnológico envolvendo hackers e segredos de estado.",
+      "date": "2023-10",
+      "genre": "Thriller"
+    },
+    {
+      "id": 9,
+      "title": "Gnome Land",
+      "authorId": 9,
+      "synopsis": "As aventuras, cheias de duendes, e emoções",
+      "date": "2022-03",
+      "genre": "Romance, Aventura, Drama"
     }
   ],
   "authors": [
     {
       "id": 1,
-      "name": "Angelo Ferraz Modanez ",
+      "name": "Angelo Ferraz Modanez",
       "pseudonym": "Banana",
       "born": "4222-03-12",
       "nationality": "Brazilian",
@@ -36,19 +84,67 @@
     },
     {
       "id": 2,
-      "name": "Yuyya",
-      "pseudonym": "AUT",
-      "born": "275760-06-06",
-      "nationality": "Japan",
-      "prize": null
+      "name": "Maria Silva",
+      "pseudonym": "Luna",
+      "born": "1980-11-05",
+      "nationality": "Portuguese",
+      "prize": false
     },
     {
       "id": 3,
-      "name": "Giuseppe",
-      "pseudonym": "Duendss",
-      "born": "2011-11-11",
-      "nationality": "Gnome Land",
+      "name": "João Pereira",
+      "pseudonym": null,
+      "born": "1975-04-18",
+      "nationality": "Brazilian",
       "prize": true
+    },
+    {
+      "id": 4,
+      "name": "Ana Costa",
+      "pseudonym": "Flora",
+      "born": "1992-07-23",
+      "nationality": "Brazilian",
+      "prize": false
+    },
+    {
+      "id": 5,
+      "name": "Carlos Almeida",
+      "pseudonym": null,
+      "born": "1985-01-12",
+      "nationality": "Brazilian",
+      "prize": false
+    },
+    {
+      "id": 6,
+      "name": "Fernanda Ribeiro",
+      "pseudonym": "Nanda",
+      "born": "1978-09-10",
+      "nationality": "Brazilian",
+      "prize": true
+    },
+    {
+      "id": 7,
+      "name": "Pedro Oliveira",
+      "pseudonym": "P. Olive",
+      "born": "1965-02-25",
+      "nationality": "Brazilian",
+      "prize": false
+    },
+    {
+      "id": 8,
+      "name": "Clara Mendes",
+      "pseudonym": null,
+      "born": "1990-05-30",
+      "nationality": "Brazilian",
+      "prize": true
+    },
+    {
+      "id": 9,
+      "name": "Kefero Messisas Diogo Bolsonaro",
+      "pseudonym": "KeferoXXT",
+      "born": "2020-06-05",
+      "nationality": "Brazilian",
+      "award": true
     }
   ]
 }

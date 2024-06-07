@@ -1,92 +1,86 @@
-<main class="container-sm card mt-4 mb-3 p-5 rounded-4 border-3 ">
-    <form [formGroup]="bookFormGroup" class="col-9 mx-auto">
-        <h1 class="mb-5 text-center">Book Registration</h1>
-        <section class="row mb-3">
-            <label for="title" class="form-label">Book's title:</label>
-            <div class="input-group col">
-                <input class="form-control" type="text" formControlName="title" id="title"
-                    placeholder="Enter the title">
-                <span class="input-group-text"><i class="bi bi-book"></i></span>
-            </div>
-            <small *ngIf="submitted && title.hasError('required')" class="text-danger">~The title is
-                required</small>
-        </section>
-        <section class="row mb-3">
-            <label for="author" class="form-label">Book's Author:</label>
-            <div class="input-group col">
-                <select class="form-select" formControlName="authorId" [compareWith]="compareAuthors">
-                    <option *ngFor="let author of arrayAuthor" [ngValue]="author.id">
-                        {{ author.name }}
-                    </option>
-                </select>
-                <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
-            </div>
-            <small *ngIf="submitted && authorId.hasError('required')" class="text-danger">~The Author is required
-            </small>
-        </section>
-        <section class="row mb-3">
-            <div class="col">
-                <label for="synopsis" class="form label">Synopsis:</label>
-                <div class="input-group col">
-                    <textarea class="form-control" formControlName="synopsis" id="synopsis" rows="3"
-                        placeholder="Synopsis"></textarea>
-                    <span class="input-group-text"><i class="bi bi-card-text"></i></span>
-                </div>
-            </div>
-            <small *ngIf="submitted && synopsis.hasError('required')" class="text-danger">~The synopsis is
-                required</small>
-        </section>
-        <section class="row mb-3">
-            <div class="col">
-                <label for="date" class="form-label">Date of Released:</label>
-                <div class="input-group col">
-                    <input class="form-control" type="month" formControlName="date" id="date" min="100" max="2099" />
-                </div>
-                <small *ngIf="submitted && date.hasError('required')" class="text-danger">~The date is
-                    required</small>
-            </div>
-            <div class="col">
-                <label for="genre" class="form-label">Book's Genre:</label>
-                <div class="input-group col">
-                    <input class="form-control" type="text" formControlName="genre" id="genre"
-                        placeholder="Enter the genre">
-                    <span class="input-group-text"><i class="bi bi-heart"></i></span>
-                </div>
-                <small *ngIf="submitted && genre.hasError('required')" class="text-danger">~The genre is
-                    required</small>
-            </div>
-        </section>
-        <section class="row mb-4">
-            <div class="btn-save text-center">
-                <button class="btn btn-secondary w-100 mt-3 mb-4" type="submit" (click)="save()">Save <i
-                        class="bi bi-box-arrow-in-right"></i></button>
-            </div>
-        </section>
-    </form>
-    <h1 class="text-center">Books</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">Date</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Options</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let book of arrayBook">
-                <th scope="row">{{ book.id }}</th>
-                <td>{{ book.title }}</td>
-                <td>{{ getAuthorName(book.authorId)?.name }}</td>
-                <td>{{ book.date }}</td>
-                <td>{{ book.genre }}</td>
-                <td>
-                    <button class="btn btn-success me-2" (click)="update(book)">Update</button>
-                    <button class="btn btn-danger" (click)="delete(book)">Delete</button>
-                </td>
-            </tr>
-        </tbody>
+<main class="container w-75 bg-dark rounded-4 mt-3 p-5" style="margin-bottom: 90px;">
+  <form [formGroup]="bookFormGroup" class="mx-auto">
+    <div class="card rounded-4 border-5 border-success p-5">
+      <h1 class="mb-4 text-center">Book Registration</h1>
+      <section class="row mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <div class="input-group col">
+          <input class="form-control" type="text" formControlName="title" placeholder="Enter the book's title">
+          <span class="input-group-text bg-success"><i class="bi bi-book text-light"></i></span>
+        </div>
+        <small *ngIf="submitted && title.hasError('required')" class="text-danger">~The title is required~</small>
+      </section>
+      <section class="row mb-3">
+        <label for="author" class="form-label">Author:</label>
+        <div class="input-group col">
+          <select class="form-select" formControlName="authorId" [compareWith]="compareAuthors">
+            <option *ngFor="let author of arrayAuthor" [ngValue]="author.id">{{ author.name }}</option>
+          </select>
+          <span class="input-group-text bg-success"><i class="bi bi-person-circle text-light"></i></span>
+        </div>
+        <small *ngIf="submitted && authorId.hasError('required')" class="text-danger">~The author is required~</small>
+      </section>
+      <section class="row mb-3">
+        <div class="col">
+          <label for="synopsis" class="form label">Synopsis:</label>
+          <div class="input-group col">
+            <textarea class="form-control" formControlName="synopsis" rows="3" placeholder="Synopsis"></textarea>
+            <span class="input-group-text bg-success"><i class="bi bi-card-text text-light"></i></span>
+          </div>
+        </div>
+        <small *ngIf="submitted && synopsis.hasError('required')" class="text-danger">~The synopsis is required~</small>
+      </section>
+      <section class="row mb-3">
+        <div class="col">
+          <label for="date" class="form-label">Date of Released:</label>
+          <div class="input-group col">
+            <input class="form-control" type="month" formControlName="date">
+          </div>
+          <small *ngIf="submitted && date.hasError('required')" class="text-danger">~The date is required~</small>
+        </div>
+        <div class="col">
+          <label for="genre" class="form-label">Genre:</label>
+          <div class="input-group col">
+            <input class="form-control" type="text" formControlName="genre" placeholder="Enter the genre">
+            <span class="input-group-text bg-success"><i class="bi bi-heart text-light"></i></span>
+          </div>
+          <small *ngIf="submitted && genre.hasError('required')" class="text-danger">~The genre is required~</small>
+        </div>
+      </section>
+      <section class="row">
+        <div class="btn-save text-center">
+          <button class="btn btn-success w-50 mt-3" type="submit" (click)="save()">Save<i
+              class="bi bi-box-arrow-in-right"></i></button>
+        </div>
+      </section>
+    </div>
+  </form>
+  <div class="card rounded-4 border-5 border-success p-4 mt-5">
+    <h1 class="text-center mb-4">Table of Books</h1>
+    <table class="table table-dark table-striped-columns">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Date</th>
+          <th scope="col">Genre</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider" style="font-size: 14px;">
+        <tr *ngFor="let book of arrayBook">
+          <th scope="row">{{ book.id }}</th>
+          <td>{{ book.title }}</td>
+          <td>{{ getAuthorName(book.authorId)?.name }}</td>
+          <td>{{ book.date }}</td>
+          <td>{{ book.genre }}</td>
+          <td>
+            <button class="btn btn-success me-2" (click)="update(book)">Update</button>
+            <button class="btn btn-danger" (click)="delete(book)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 </main>
